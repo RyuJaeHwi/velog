@@ -19,6 +19,10 @@ if not os.path.exists(posts_dir):
 # 레포지토리 로드
 repo = git.Repo(repo_path)
 
+# 추가) 커밋 작성자 설정
+repo.config_writer().set_value("user", "name", "RyuJaeHwi").release()
+repo.config_writer().set_value("user", "email", "yujaehwi02@gmail.com").release()
+
 # RSS 피드 파싱
 feed = feedparser.parse(rss_url)
 
